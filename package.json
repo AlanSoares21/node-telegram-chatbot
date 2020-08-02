@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/AlanSoares21/node-telegram-chatbot/issues"
   },
-  "homepage": "https://github.com/AlanSoares21/node-telegram-chatbot#readme"
+  "homepage": "https://github.com/AlanSoares21/node-telegram-chatbot#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-telegram-bot-api": "^0.50.0"
+  }
 }
