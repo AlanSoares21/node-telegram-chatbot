@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AlanSoares21/node-telegram-chatbot#readme",
   "dependencies": {
+    "dialogflow": "^1.2.0",
     "dotenv": "^8.2.0",
     "node-telegram-bot-api": "^0.50.0"
   }
