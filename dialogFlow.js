@@ -8,7 +8,7 @@ const sessionClient = new dialogFlow.SessionsClient({
         client_email: config.client_email
     }
 });
-async function sendMenssage(chatId,message){
+async function sendMessage(chatId,message){
     const sessionPath = sessionClient.sessionPath(config.project_id,chatId);
     const request ={
         session: sessionPath,
@@ -21,7 +21,20 @@ async function sendMenssage(chatId,message){
     };
     const responses = await sessionClient.detectIntent(request);
     const result = responses[0].queryResult;
-    console.log(result.fulfillmentText);
+    return {
+        text: result.fulfillmentText,
+        intent: result.intent.displayName,
+        fields: result.parameters.fields
+    };
 }
 
-sendMenssage('12345','ola');
+// ;(
+//     async()=>{
+//         const responseDialogFlow = await sendMessage('12345', 'quero treinar braço');
+//         console.log(responseDialogFlow);
+//     }
+// )()
+
+module.exports = {
+    sendMessage
+}
